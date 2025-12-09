@@ -51,7 +51,7 @@ export default function AnimatedProgressBar({
           <div
             className={`absolute inset-0 flex items-center justify-center
               text-[10px] whitespace-nowrap
-              text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]
+              text-foreground drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]
               ${labelClassName}`}
           >
             {displayLabel}

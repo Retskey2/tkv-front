@@ -11,7 +11,7 @@
     @apply absolute -bottom-3 left-1/2 -translate-x-1/2;
 
     span {
-      @apply text-[10px] text-white bg-tg-theme-color px-2;
+      @apply text-[10px] text-foreground bg-tg-theme-color px-2;
     }
   }
 }

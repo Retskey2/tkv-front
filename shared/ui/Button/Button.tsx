@@ -18,8 +18,8 @@ export const Button = ({
     "px-4 text-sm py-[10px] rounded-[14px] font-bold transition-all";
 
   const variants: Record<ButtonVariant, string> = {
-    primary: "bg-[#1D9BF0] text-white",
-    secondary: "bg-white/10 text-white",
+    primary: "bg-[#1D9BF0] text-foreground",
+    secondary: "bg-white/10 text-foreground",
   };
 
   return (

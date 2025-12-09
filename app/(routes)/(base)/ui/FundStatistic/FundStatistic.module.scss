@@ -4,7 +4,7 @@
   @apply border border-white/20 p-3 rounded-[14px] flex flex-col gap-[15px];
 
   .raise {
-    @apply flex flex-col gap-[15px];
+    @apply flex flex-col gap-[15px] mt-3;
 
     h1 {
       @apply text-[12px] flex gap-1;
@@ -14,12 +14,12 @@
       }
 
       p {
-        @apply text-white/75;
+        @apply text-foreground/75;
       }
     }
 
     span {
-      @apply text-[10px] text-white/74;
+      @apply text-[10px] text-foreground/75;
     }
   }
 
@@ -33,11 +33,11 @@
         @apply flex items-center flex-row gap-2.5;
 
         h2 {
-          @apply text-xs text-white/43;
+          @apply text-xs text-foreground/43;
         }
 
         p {
-          @apply text-white;
+          @apply text-foreground;
         }
       }
 
@@ -55,7 +55,7 @@
     }
 
     p {
-      @apply text-white/75;
+      @apply text-foreground/75;
     }
   }
 
