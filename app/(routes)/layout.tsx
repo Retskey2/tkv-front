@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+
 import Script from "next/script";
 import "./globals.scss";
 import TelegramProviderNoSSR from "../providers/TelegramProvider/TelegramProviderNoSSR";
+import { Anonymous_Pro } from "next/font/google";
 
-const nunito = Nunito({
-  variable: "--font-nunito",
+const anonymousPro = Anonymous_Pro({
+  weight: ["400", "700"],
   subsets: ["latin"],
+  variable: "--font-anonymous-pro",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +29,7 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
-      <body className={`${nunito.variable} antialiased`}>
+      <body className={`${anonymousPro.variable} antialiased`}>
         <TelegramProviderNoSSR>{children}</TelegramProviderNoSSR>
       </body>
     </html>

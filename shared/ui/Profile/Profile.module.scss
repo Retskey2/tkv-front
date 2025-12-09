@@ -1,0 +1,20 @@
+@reference "#tailwind.css";
+
+.container {
+  @apply flex items-center gap-3;
+
+  .avatar {
+    @apply rounded-full object-cover w-[45px] h-[45px];
+  }
+
+  .info {
+    @apply text-left;
+    h1 {
+      @apply text-base text-left;
+    }
+
+    p {
+      @apply text-[10px] text-subtext text-left;
+    }
+  }
+}

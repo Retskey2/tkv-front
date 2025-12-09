@@ -1,0 +1,17 @@
+@reference "#tailwind.css";
+
+.container {
+  @apply relative rounded-[10px] border border-white/20;
+
+  h1 {
+    @apply text-[14px] font-bold text-[#F5F8FA] py-2 px-4;
+  }
+
+  .wrapper {
+    @apply absolute -bottom-3 left-1/2 -translate-x-1/2;
+
+    span {
+      @apply text-[10px] text-white bg-tg-theme-color px-2;
+    }
+  }
+}
