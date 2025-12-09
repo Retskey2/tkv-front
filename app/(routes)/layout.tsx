@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import Script from "next/script";
-import "./globals.css";
+import "./globals.scss";
 import TelegramProviderNoSSR from "../providers/TelegramProvider/TelegramProviderNoSSR";
 
 const nunito = Nunito({
