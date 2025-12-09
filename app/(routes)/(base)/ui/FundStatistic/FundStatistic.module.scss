@@ -7,10 +7,14 @@
     @apply flex flex-col gap-[15px];
 
     h1 {
-      @apply text-[12px] text-white/74;
+      @apply text-[12px] flex gap-1;
 
       span {
-        @apply text-[14px] opacity-100;
+        @apply text-[14px];
+      }
+
+      p {
+        @apply text-white/75;
       }
     }
 
@@ -44,10 +48,14 @@
   }
 
   .stats {
-    @apply text-[10px] text-white/75 flex flex-row gap-1 pt-3 border-t border-t-white/10;
+    @apply text-[10px] flex flex-row gap-1 pt-3 border-t border-t-white/10;
 
     span {
-      @apply opacity-100;
+      @apply text-[14px];
+    }
+
+    p {
+      @apply text-white/75;
     }
   }
 

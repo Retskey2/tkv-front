@@ -10,7 +10,8 @@ export const FundStatistic = ({}) => {
     <div className={styles["container"]}>
       <div className={styles["raise"]}>
         <h1>
-          <span>💎</span> Total funds raised 583.93 TON
+          <span>💎</span>
+          <p> Total funds raised 583.93 TON</p>
         </h1>
         <ProgressBar value={30} color="#1D9Bf0" label={`${30.3}%`} />
         <span>First round goal 1,000.00 TON</span>
@@ -29,7 +30,8 @@ export const FundStatistic = ({}) => {
           </Link>
         </div>
         <h2 className={styles["stats"]}>
-          <span>🔥</span>148.32K members & 223.42 purchased
+          <span>🔥</span>
+          <p>148.32K members & 223.42 purchased</p>
         </h2>
       </div>
       <Button className={styles["button-drop"]} variant="primary">
