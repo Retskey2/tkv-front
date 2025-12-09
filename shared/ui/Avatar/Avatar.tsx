@@ -14,7 +14,7 @@ export interface AvatarProps {
 const sizeMap = {
   small: 38,
   medium: 45,
-  large: 64,
+  large: 60,
 };
 
 export const Avatar: FC<AvatarProps> = ({
