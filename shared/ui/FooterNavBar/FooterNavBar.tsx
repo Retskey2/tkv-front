@@ -12,7 +12,7 @@ export const FooterNavBar = () => {
 
   return (
     <footer className={styles["footer-container"]}>
-      <nav className="">
+      <nav>
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           const isActive = pathname === item.href;
