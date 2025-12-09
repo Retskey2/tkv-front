@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 import Script from "next/script";
-import "./globals.scss";
+
 import TelegramProviderNoSSR from "../providers/TelegramProvider/TelegramProviderNoSSR";
 import { Anonymous_Pro } from "next/font/google";
+
+// import "tw-animate-css/dist/tw-animate.css";
+import "./globals.scss";
 
 const anonymousPro = Anonymous_Pro({
   weight: ["400", "700"],

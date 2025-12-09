@@ -1,5 +1,5 @@
 @reference "#tailwind.css";
 
 .container {
-  @apply px-8 py-5;
+  @apply px-8 py-5 flex gap-5 flex-col;
 }

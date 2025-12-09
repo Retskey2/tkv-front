@@ -1,0 +1,9 @@
+@reference "#tailwind.css";
+
+.container {
+  @apply flex flex-col gap-2.5;
+
+  .description {
+    @apply text-subtext text-left;
+  }
+}
