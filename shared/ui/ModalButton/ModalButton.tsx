@@ -16,7 +16,7 @@ export const ModalButton = ({
     <div>
       <Button
         onClick={() => setIsOpen(true)}
-        className="w-full"
+        className="w-full cursor-pointer"
         variant="secondary"
       >
         {label ?? "Open Modal"}

@@ -1,0 +1,21 @@
+@reference "#tailwind.css";
+
+.footer-container {
+  @apply fixed bottom-0 left-0 right-0 z-50 bg-footer-nav border-t border-t-white/20 h-[69px];
+
+  nav {
+    @apply h-full flex items-center justify-center gap-10;
+
+    .nav-item {
+      @apply flex flex-col items-center justify-center gap-1 text-white/40 transition;
+    }
+
+    .nav-item-active {
+      @apply text-white;
+    }
+
+    .nav-icon {
+      @apply w-6 h-6;
+    }
+  }
+}

@@ -68,9 +68,11 @@
   --color-subtext: #aab8c2;
   --background-color-tg-theme-color: var(--tg-theme-bg-color);
   --font-anonymous: var(--font-anonymous-pro);
+  --color-footer-nav: var(--color-footer-nav);
 }
 
 :root {
+  --color-footer-nav: #15202b;
   --radius: 0.625rem;
   --background: var(--tg-theme-bg-color, #2f2f33);
   --foreground: var(--tg-theme-text-color, #171717);

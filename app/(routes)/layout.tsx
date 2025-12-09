@@ -7,6 +7,7 @@ import { Anonymous_Pro } from "next/font/google";
 
 // import "tw-animate-css/dist/tw-animate.css";
 import "./globals.scss";
+import { FooterNavBar } from "@/shared/ui/FooterNavBar/FooterNavBar";
 
 const anonymousPro = Anonymous_Pro({
   weight: ["400", "700"],
@@ -33,7 +34,10 @@ export default function RootLayout({
         />
       </head>
       <body className={`${anonymousPro.variable} antialiased`}>
-        <TelegramProviderNoSSR>{children}</TelegramProviderNoSSR>
+        <TelegramProviderNoSSR>
+          {children}
+          <FooterNavBar />
+        </TelegramProviderNoSSR>
       </body>
     </html>
   );
