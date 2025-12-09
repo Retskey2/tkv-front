@@ -33,7 +33,7 @@ export default function AnimatedProgressBar({
 
   return (
     <div className={`w-full ${className}`}>
-      <div className="relative h-5 w-full overflow-hidden rounded-full bg-gray-100 dark:bg-gray-800">
+      <div className="relative h-5 w-full overflow-hidden rounded-full bg-white/10">
         <motion.div
           animate={{ width: `${clampedValue}%` }}
           className={`h-full rounded-full ${barClassName}`}

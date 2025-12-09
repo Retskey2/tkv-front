@@ -15,21 +15,23 @@ export const FundStatistic = ({}) => {
         <ProgressBar value={30} color="#1D9Bf0" label={`${30.3}%`} />
         <span>First round goal 1,000.00 TON</span>
       </div>
-      <div className={styles["fundation"]}>
-        <div className={styles["info"]}>
-          <Avatar src="/image.jpg" alt="User" size="small" />
-          <div>
-            <h2>Drop Points price:</h2>
-            <p>0.01 TON</p>
+      <div className={styles["wrapper-fund"]}>
+        <div className={styles["fundation"]}>
+          <div className={styles["info"]}>
+            <Avatar src="/image.jpg" alt="User" size="small" />
+            <div>
+              <h2>Drop Points price:</h2>
+              <p>0.01 TON</p>
+            </div>
           </div>
+          <Link className={styles["link-to"]} href="/drop">
+            Buy
+          </Link>
         </div>
-        <Link className={styles["link-to"]} href="/drop">
-          Buy
-        </Link>
+        <h2 className={styles["stats"]}>
+          <span>🔥</span>148.32K members & 223.42 purchased
+        </h2>
       </div>
-      <h2 className={styles["stats"]}>
-        <span>🔥</span>148.32K members & 223.42 purchased
-      </h2>
       <Button className={styles["button-drop"]} variant="primary">
         Get Drop points!
       </Button>

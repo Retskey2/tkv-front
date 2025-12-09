@@ -19,23 +19,27 @@
     }
   }
 
-  .fundation {
-    @apply bg-[#253341] rounded-[10px] p-3 flex justify-between;
+  .wrapper-fund {
+    @apply flex flex-col gap-[15px] bg-[#253341] rounded-[10px] p-3;
 
-    .info {
-      @apply flex items-center flex-row gap-2.5;
+    .fundation {
+      @apply flex justify-between;
 
-      h2 {
-        @apply text-xs text-white/43;
+      .info {
+        @apply flex items-center flex-row gap-2.5;
+
+        h2 {
+          @apply text-xs text-white/43;
+        }
+
+        p {
+          @apply text-white;
+        }
       }
 
-      p {
-        @apply text-white;
+      .link-to {
+        @apply bg-white/10 py-2.5 px-[18px] rounded-[14px] font-bold;
       }
-    }
-
-    .link-to {
-      @apply bg-white/10 py-2.5 px-[18px] rounded-[14px] font-bold;
     }
   }
 
