@@ -14,7 +14,8 @@ export const Button = ({
   className,
   ...rest
 }: ButtonProps) => {
-  const styles = "px-4 text-sm py-2 rounded-[14px] font-bold transition-all";
+  const styles =
+    "px-4 text-sm py-[10px] rounded-[14px] font-bold transition-all";
 
   const variants: Record<ButtonVariant, string> = {
     primary: "bg-[#1D9BF0] text-white",

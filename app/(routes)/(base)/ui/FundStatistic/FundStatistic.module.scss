@@ -1,0 +1,53 @@
+@reference "#tailwind.css";
+
+.container {
+  @apply border border-white/20 p-3 rounded-[14px] flex flex-col gap-[15px];
+
+  .raise {
+    @apply flex flex-col gap-[15px];
+
+    h1 {
+      @apply text-[12px] text-white/74;
+
+      span {
+        @apply text-[14px] opacity-100;
+      }
+    }
+
+    span {
+      @apply text-[10px] text-white/74;
+    }
+  }
+
+  .fundation {
+    @apply bg-[#253341] rounded-[10px] p-3 flex justify-between;
+
+    .info {
+      @apply flex items-center flex-row gap-2.5;
+
+      h2 {
+        @apply text-xs text-white/43;
+      }
+
+      p {
+        @apply text-white;
+      }
+    }
+
+    .link-to {
+      @apply bg-white/10 py-2.5 px-[18px] rounded-[14px] font-bold;
+    }
+  }
+
+  .stats {
+    @apply text-[10px] text-white/75 flex flex-row gap-1 pt-3 border-t border-t-white/10;
+
+    span {
+      @apply opacity-100;
+    }
+  }
+
+  .button-drop {
+    @apply w-full cursor-pointer;
+  }
+}

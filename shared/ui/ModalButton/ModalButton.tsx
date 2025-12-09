@@ -30,11 +30,8 @@ export const ModalButton = ({
         <div className="space-y-4">
           <p className="text-foreground/70">{content}</p>
           <div className="flex justify-end space-x-2">
-            <Button onClick={() => setIsOpen(false)} variant="secondary">
-              Cancel
-            </Button>
             <Button onClick={() => setIsOpen(false)} variant="primary">
-              Confirm
+              Okay
             </Button>
           </div>
         </div>
