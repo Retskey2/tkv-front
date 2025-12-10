@@ -4,7 +4,7 @@
   @apply flex flex-col gap-2.5;
 
   .wrapper-sticky {
-    @apply sticky top-0 z-100  transition-all pb-2 pt-4 bg-transparent;
+    @apply sticky top-0 z-50  transition-all pb-2 pt-4 bg-transparent;
   }
 
   .active {
