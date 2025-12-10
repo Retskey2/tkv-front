@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import styles from "./FooterNavBar.module.scss";
 
-import { NAV_ITEMS } from "@/shared/constants/navigation";
+import { NAV_ITEMS } from "@/shared/constants/constants.navigation";
 
 export const FooterNavBar = () => {
   const pathname = usePathname();

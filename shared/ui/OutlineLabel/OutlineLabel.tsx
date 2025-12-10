@@ -9,7 +9,7 @@ export const OutlineLabel = ({
 }) => {
   return (
     <div className={styles["container"]}>
-      <h1>{text ?? "26,031"}</h1>
+      <h1>{text ?? "-"}</h1>
 
       <div className={styles["wrapper"]}>
         <span>{label ?? "Points"}</span>

@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-
 import Script from "next/script";
-
-import TelegramProviderNoSSR from "../providers/TelegramProvider/TelegramProviderNoSSR";
 import { Anonymous_Pro } from "next/font/google";
 
-// import "tw-animate-css/dist/tw-animate.css";
 import "./globals.scss";
+import { AppProviders } from "../providers";
 import { FooterNavBar } from "@/shared/ui/FooterNavBar/FooterNavBar";
 
 const anonymousPro = Anonymous_Pro({
@@ -34,10 +31,10 @@ export default function RootLayout({
         />
       </head>
       <body className={`${anonymousPro.variable} antialiased`}>
-        <TelegramProviderNoSSR>
+        <AppProviders>
           {children}
           <FooterNavBar />
-        </TelegramProviderNoSSR>
+        </AppProviders>
       </body>
     </html>
   );

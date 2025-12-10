@@ -1,13 +1,26 @@
+"use client";
+
 import { Avatar } from "../Avatar/Avatar";
 import styles from "./Profile.module.scss";
 
-export const Profile = () => {
+import { User } from "@/featured/user/model/types";
+
+interface IProfile {
+  userData: User;
+}
+
+export const Profile = ({ userData }: IProfile) => {
   return (
     <div className={styles["container"]}>
-      <Avatar src="/image.jpg" alt="User" size="medium" />
+      <Avatar
+        src={userData?.photoUrl ?? "/image.jpg"}
+        alt={userData?.username ?? "User"}
+        size="medium"
+      />
+
       <div className={styles["info"]}>
-        <h1>Username</h1>
-        <p>You Rank #2932</p>
+        <h1>{userData?.username ?? "Unknown"}</h1>
+        <p>Your rank #2932</p>
       </div>
     </div>
   );

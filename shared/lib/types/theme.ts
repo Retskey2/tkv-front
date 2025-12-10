@@ -1,0 +1,1 @@
+export type ThemeParams = import("@telegram-apps/sdk").ThemeParams;

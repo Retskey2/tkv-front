@@ -10,11 +10,7 @@ import { enableTelegramMock } from "@/shared/lib/hooks/mockTelegramEnv";
 
 let cssVarsBound = false;
 
-export default function TelegramProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export function TelegramProvider({ children }: { children: React.ReactNode }) {
   const hasRun = useRef(false);
 
   useLayoutEffect(() => {
