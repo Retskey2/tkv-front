@@ -4,17 +4,26 @@ import { ProgressBar } from "@/shared/ui";
 
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import Link from "next/link";
+import { FundStatsResponse } from "@/featured/fund/types/types";
 
-export const FundStatistic = ({}) => {
+interface IFundStatistic {
+  data: FundStatsResponse;
+}
+
+export const FundStatistic = ({ data }: IFundStatistic) => {
   return (
     <div className={styles["container"]}>
       <div className={styles["raise"]}>
         <h1>
           <span>💎</span>
-          <p> Total funds raised 583.93 TON</p>
+          <p> Total funds raised {data?.totalRaised ?? "-"} TON</p>
         </h1>
-        <ProgressBar value={30} color="#1D9Bf0" label={`${30.3}%`} />
-        <span>First round goal 1,000.00 TON</span>
+        <ProgressBar
+          label={`${data?.progress ?? 0}%`}
+          value={data?.progress ?? 0}
+          color="#1D9Bf0"
+        />
+        <span>First round goal {data?.goal.toLocaleString()} TON</span>
       </div>
       <div className={styles["wrapper-fund"]}>
         <div className={styles["fundation"]}>
@@ -31,7 +40,9 @@ export const FundStatistic = ({}) => {
         </div>
         <h2 className={styles["stats"]}>
           <span>🔥</span>
-          <p>148.32K members & 223.42 purchased</p>
+          <p>
+            {data?.membersCount} members & {data?.purchasedCount} purchased
+          </p>
         </h2>
       </div>
       <Button className={styles["button-drop"]} variant="primary">

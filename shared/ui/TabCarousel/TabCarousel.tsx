@@ -2,7 +2,7 @@
 
 import styles from "./TabCarousel.module.scss";
 import { useRef, useState } from "react";
-import clsx from "clsx";
+import { Tab } from "../Tab/Tab";
 
 type TabCarouselProps = {
   tabs: string[];
@@ -30,19 +30,10 @@ export default function TabCarousel({ tabs, onChange }: TabCarouselProps) {
 
   return (
     <div ref={ref} className={styles["container-tabs-carousel"]}>
-      {tabs.map((t, i) => (
-        <button
-          key={i}
-          onClick={() => handleSelect(i)}
-          className={clsx(
-            "whitespace-nowrap px-3 py-2 rounded-[10px] text-xs transition",
-            active === i
-              ? "bg-white text-[#253341]"
-              : "bg-[#7474801F] text-white"
-          )}
-        >
-          {t}
-        </button>
+      {tabs.map((item, i) => (
+        <Tab key={i} onClick={() => handleSelect(i)} active={active === i}>
+          {item}
+        </Tab>
       ))}
     </div>
   );

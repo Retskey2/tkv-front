@@ -81,7 +81,7 @@ export default function BasicModal({
           >
             <motion.div
               animate={{ scale: 1, y: 0, opacity: 1 }}
-              className={`${modalSizes[size]} relative mx-auto w-full rounded-xl border bg-primary p-4 shadow-xl sm:p-6`}
+              className={`${modalSizes[size]} relative mx-auto w-full rounded-xl border bg-tg-theme-color p-4 shadow-xl sm:p-6`}
               exit={{
                 scale: 0.95,
                 y: 10,
@@ -95,7 +95,9 @@ export default function BasicModal({
               {/* Header */}
               <div className="mb-4 flex items-center justify-between">
                 {title && (
-                  <h3 className="font-medium text-xl leading-6">{title}</h3>
+                  <h3 className="font-medium text-foreground/75 text-xl leading-6">
+                    {title}
+                  </h3>
                 )}
                 <motion.button
                   className="ml-auto rounded-full p-1.5 transition-colors hover:bg-secondary"

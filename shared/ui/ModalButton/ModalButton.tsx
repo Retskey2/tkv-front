@@ -12,6 +12,7 @@ export const ModalButton = ({
   label: string;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div>
       <Button
@@ -28,7 +29,7 @@ export const ModalButton = ({
         title={label}
       >
         <div className="space-y-4">
-          <p className="text-foreground/70">{content}</p>
+          <p className="text-foreground/75">{content}</p>
           <div className="flex justify-end space-x-2">
             <Button onClick={() => setIsOpen(false)} variant="primary">
               Okay

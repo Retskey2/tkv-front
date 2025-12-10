@@ -6,7 +6,7 @@ import styles from "./Profile.module.scss";
 import { User } from "@/featured/user/model/types";
 
 interface IProfile {
-  userData: User;
+  userData?: User | null;
 }
 
 export const Profile = ({ userData }: IProfile) => {
@@ -14,7 +14,7 @@ export const Profile = ({ userData }: IProfile) => {
     <div className={styles["container"]}>
       <Avatar
         src={userData?.photoUrl ?? "/image.jpg"}
-        alt={userData?.username ?? "User"}
+        alt={userData?.username ?? "avatar"}
         size="medium"
       />
 

@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { List } from "@/shared/ui/List/List";
 import TabCarousel from "@/shared/ui/TabCarousel/TabCarousel";
-import styles from "./HomeTabs.module.scss";
+import styles from "./StickyCarousel.module.scss";
 
-export const HomeTabs = () => {
+export const StickyCarousel = () => {
   const tabRef = useRef<HTMLDivElement>(null);
   const [isSticky, setIsSticky] = useState(false);
 
