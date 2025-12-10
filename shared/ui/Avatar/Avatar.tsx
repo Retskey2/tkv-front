@@ -1,15 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import styles from "./Avatar.module.scss";
-
-export interface AvatarProps {
-  src?: string;
-  alt?: string;
-  className?: string;
-  size?: "small" | "medium" | "large" | number;
-  shape?: "circle" | "square" | "rounded";
-  onClick?: () => void;
-}
+import { AvatarProps } from "./types";
 
 const sizeMap = {
   small: 38,

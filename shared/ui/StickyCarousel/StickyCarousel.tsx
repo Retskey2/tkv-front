@@ -4,8 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { List } from "@/shared/ui/List/List";
 import TabCarousel from "@/shared/ui/TabCarousel/TabCarousel";
 import styles from "./StickyCarousel.module.scss";
+import { useTransactionHistory } from "@/featured/transaction-history/api/transaction-history.queries";
 
 export const StickyCarousel = () => {
+  const { data: dataTransaction } = useTransactionHistory();
+
   const tabRef = useRef<HTMLDivElement>(null);
   const [isSticky, setIsSticky] = useState(false);
 
@@ -38,7 +41,7 @@ export const StickyCarousel = () => {
       </div>
 
       <div className={styles["wrapper-list"]}>
-        <List />
+        <List data={dataTransaction} />
       </div>
     </div>
   );

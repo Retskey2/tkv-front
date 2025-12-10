@@ -1,0 +1,13 @@
+@reference "#tailwind.css";
+
+.nav-item {
+  @apply flex flex-col items-center justify-center gap-1 text-white/40 transition;
+}
+
+.nav-item-active {
+  @apply text-white;
+}
+
+.nav-icon {
+  @apply w-6 h-6;
+}

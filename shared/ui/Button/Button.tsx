@@ -1,11 +1,6 @@
-import { ReactNode, ButtonHTMLAttributes } from "react";
-
-type ButtonVariant = "primary" | "secondary";
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
-  variant?: ButtonVariant;
-}
+import { ButtonProps, ButtonVariant } from "./type";
+import styles from "./Button.module.scss";
+import clsx from "clsx";
 
 export const Button = ({
   children,
@@ -14,18 +9,15 @@ export const Button = ({
   className,
   ...rest
 }: ButtonProps) => {
-  const styles =
-    "px-4 text-sm py-[10px] rounded-[14px] font-bold transition-all hover:scale-98 transition-all";
-
   const variants: Record<ButtonVariant, string> = {
-    primary: "bg-[#1D9BF0] hover:bg-[#1D9BF0]/80 text-foreground",
-    secondary: "bg-white/10 hover:bg-white/15 text-foreground",
+    primary: styles["primary"],
+    secondary: styles["secondary"],
   };
 
   return (
     <button
       onClick={onClick}
-      className={`${variants[variant]} ${styles} ${className ?? ""}`}
+      className={clsx(styles["button"], variants[variant], className)}
       {...rest}
     >
       {children}

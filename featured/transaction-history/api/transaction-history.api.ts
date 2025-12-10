@@ -1,5 +1,9 @@
 import axios from "@/shared/api/axios";
 
 export const getTransactionHistory = () => {
-  return axios.get(`/transaction-history`);
+  return axios.get(`/transaction-history`, {
+    params: {
+      limit: "10",
+    },
+  });
 };

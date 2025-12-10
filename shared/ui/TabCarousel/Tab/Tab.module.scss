@@ -1,0 +1,9 @@
+@reference "#tailwind.css";
+
+.tab-item {
+  @apply whitespace-nowrap hover:scale-98 cursor-pointer px-3 py-2 rounded-[10px] text-xs transition bg-[#7474801F] text-white;
+}
+
+.active-item {
+  @apply bg-white text-[#253341];
+}

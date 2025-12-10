@@ -1,10 +1,15 @@
-import { ListItem } from "../ListItem/ListItem";
+import { TransactionHistory } from "@/featured/transaction-history/types/types";
+import { ListItem } from "./ListItem/ListItem";
 
-export const List = () => {
+interface ListProps {
+  data?: TransactionHistory[];
+}
+
+export const List = ({ data = [] }: ListProps) => {
   return (
     <ul className="flex flex-col gap-2 h-full overflow-auto">
-      {new Array(10).fill(0).map((value, idx) => (
-        <ListItem key={idx} />
+      {data?.map((item, idx) => (
+        <ListItem item={item} key={item.id} idx={idx} />
       ))}
     </ul>
   );

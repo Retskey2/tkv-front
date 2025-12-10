@@ -7,7 +7,7 @@ import Link from "next/link";
 import { FundStatsResponse } from "@/featured/fund/types/types";
 
 interface IFundStatistic {
-  data: FundStatsResponse;
+  data?: FundStatsResponse;
 }
 
 export const FundStatistic = ({ data }: IFundStatistic) => {

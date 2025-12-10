@@ -2,7 +2,7 @@
 
 import styles from "./TabCarousel.module.scss";
 import { useRef, useState } from "react";
-import { Tab } from "../Tab/Tab";
+import { Tab } from "./Tab/Tab";
 
 type TabCarouselProps = {
   tabs: string[];

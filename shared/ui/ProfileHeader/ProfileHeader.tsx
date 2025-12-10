@@ -11,7 +11,7 @@ export const ProfileHeader = ({ userData }: ProfileHeaderProps) => {
   return (
     <div className={styles["container"]}>
       <Profile userData={userData} />
-      <OutlineLabel label="Points" text={userData?.points?.toLocaleString()} />
+      <OutlineLabel text={userData?.points?.toLocaleString()} />
     </div>
   );
 };
