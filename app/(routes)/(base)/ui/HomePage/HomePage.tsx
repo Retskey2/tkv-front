@@ -7,7 +7,7 @@ import { ProfileHeaderContainer } from '@/widgets/ProfileHeaderContainer/Profile
 
 export default function HomePage() {
   return (
-    <div className={styles['container']}>
+    <div className={styles['container-page']}>
       <ProfileHeaderContainer />
       <Description text="Create sustained impact. Support verified projects. Get regular updates. Save tax. Use web3." />
       <FundStatisticContainer />

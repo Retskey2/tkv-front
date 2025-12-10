@@ -1,0 +1,5 @@
+@reference "#tailwind.css";
+
+.container-page {
+  @apply flex h-full flex-col items-center justify-center gap-8 px-8 py-5;
+}

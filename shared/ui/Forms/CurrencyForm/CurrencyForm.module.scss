@@ -1,0 +1,13 @@
+@reference "#tailwind.css";
+
+.container-form {
+  @apply flex w-full flex-col gap-5;
+
+  .container-inputs {
+    @apply flex flex-col gap-5;
+  }
+
+  .submit-button {
+    @apply w-full;
+  }
+}

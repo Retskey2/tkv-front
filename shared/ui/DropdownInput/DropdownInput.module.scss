@@ -1,0 +1,55 @@
+@reference "#tailwind.css";
+
+.container-input {
+  @apply flex flex-col gap-2;
+
+  > label {
+    @apply text-foreground text-[12px];
+  }
+
+  .wrapper-input {
+    @apply flex flex-row gap-3;
+
+    .block-dropdown {
+      @apply relative;
+
+      > button {
+        @apply flex cursor-pointer flex-row items-center gap-3 rounded-[10px] bg-[#15202B] px-6 py-[18px] hover:bg-[#15202B]/20;
+
+        span {
+          @apply text-foreground/60;
+        }
+
+        .svg {
+          @apply transform transition-transform;
+        }
+      }
+
+      .wrapper-menu {
+        @apply bg-tg-theme-color absolute z-10 mt-0.5 flex w-48 min-w-[100px] flex-col gap-1 rounded-xl shadow-sm;
+
+        .wrapper-menu-item {
+          @apply flex w-full items-center space-x-3 rounded-[10px] px-4 py-3 text-left transition-colors hover:bg-[#1E2A38];
+
+          .inner {
+            .name {
+              @apply text-foreground text-[14px] font-medium;
+            }
+
+            .code {
+              @apply text-foreground/60 text-[12px];
+            }
+          }
+        }
+      }
+    }
+
+    .block-input {
+      @apply flex w-full min-w-[200px] grow items-center gap-3 rounded-[10px] bg-[#15202B] px-6 py-3 select-none;
+
+      > span {
+        @apply text-foreground/60;
+      }
+    }
+  }
+}
