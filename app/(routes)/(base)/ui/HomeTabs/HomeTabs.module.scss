@@ -3,7 +3,16 @@
 .container {
   @apply flex flex-col gap-2.5;
 
+  .wrapper-sticky {
+    @apply sticky top-0 z-100  transition-all pb-2 pt-4 bg-transparent;
+  }
+
+  .active {
+    @apply bg-tg-theme-color/20;
+    backdrop-filter: blur(10px);
+  }
+
   .wrapper-list {
-    @apply pb-20 max-h-[1200px] no-scrollbar overflow-y-auto;
+    @apply pb-20 no-scrollbar overflow-y-auto;
   }
 }
