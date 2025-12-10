@@ -1,16 +1,11 @@
 'use client';
 
-import { Controller, Control, FieldValues, Path } from 'react-hook-form';
+import { Controller, FieldValues } from 'react-hook-form';
 import IconIncrease from '../../assets/icons/Increase.svg';
 import IconDecrease from '../../assets/icons/Decrease.svg';
 import { formatNumberAmount } from '@/shared/utils/formatter';
-
-export interface IAmountInputProps<T extends FieldValues> {
-  control: Control<T>;
-  name: Path<T>;
-  min?: number;
-  max?: number;
-}
+import { IAmountInputProps } from './types';
+import styles from './AmountInput.module.scss';
 
 export const AmountInput = <T extends FieldValues>({
   control,
@@ -37,8 +32,8 @@ export const AmountInput = <T extends FieldValues>({
 
         return (
           <div>
-            <div className="flex flex-row items-center justify-center gap-[18px] rounded-[10px] bg-[#15202B] py-3">
-              <button type="button" onClick={decrement} className="flex-none">
+            <div className={styles['container-input']}>
+              <button type="button" onClick={decrement}>
                 <IconDecrease />
               </button>
 
@@ -46,18 +41,17 @@ export const AmountInput = <T extends FieldValues>({
                 type="text"
                 value={formatNumberAmount(field.value, max)}
                 onChange={handleChange}
-                className="text-foreground w-[110px] text-center text-[24px] font-bold outline-none"
                 placeholder="0,00"
               />
 
-              <button type="button" onClick={increment} className="flex-none">
+              <button type="button" onClick={increment}>
                 <IconIncrease />
               </button>
             </div>
 
             {numericValue < min && (
-              <p className="text-foreground/60 mt-2 text-center text-[12px] select-none">
-                You must buy at least <span className="text-foreground"> {min} points</span>
+              <p className={styles['info']}>
+                You must buy at least <span> {min} points</span>
               </p>
             )}
           </div>

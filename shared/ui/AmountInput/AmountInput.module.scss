@@ -1,0 +1,17 @@
+@reference "#tailwind.css";
+
+.container-input {
+  @apply flex flex-row items-center justify-center gap-[18px] rounded-[10px] bg-[#15202B] py-3;
+
+  > input {
+    @apply text-foreground w-[110px] text-center text-[24px] font-bold outline-none;
+  }
+}
+
+.info {
+  @apply text-foreground/60 mt-2 text-center text-[12px] select-none;
+
+  > span {
+    @apply text-foreground;
+  }
+}
