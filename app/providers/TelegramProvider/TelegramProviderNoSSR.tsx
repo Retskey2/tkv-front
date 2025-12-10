@@ -1,17 +1,13 @@
-"use client";
-
-import React from "react";
 import dynamic from "next/dynamic";
 
-const TelegramProvider = dynamic(() => import("./TelegramProvider"), {
-  ssr: false,
-  loading: () => null,
-});
+const TelegramProviderNoSSR = dynamic(
+  () => import("./TelegramProvider").then((mod) => mod.TelegramProvider),
+  {
+    ssr: false,
+    loading: () => null,
+  }
+);
 
-export default function TelegramProviderNoSSR({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <TelegramProvider>{children}</TelegramProvider>;
+export default function Wrapper({ children }: { children: React.ReactNode }) {
+  return <TelegramProviderNoSSR>{children}</TelegramProviderNoSSR>;
 }
