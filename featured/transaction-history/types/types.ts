@@ -1,7 +1,7 @@
-import { User } from "@/featured/user/model/types";
+import { User } from '@/featured/user/model/types';
 
 export enum CurrencyList {
-  TON = "TON",
+  TON = 'TON',
 }
 
 export interface TransactionHistory {

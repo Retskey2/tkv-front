@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { motion } from "motion/react";
+import { motion } from 'motion/react';
 
 export type AnimatedProgressBarProps = {
   value: number;
@@ -18,18 +18,15 @@ const MAX_PROGRESS_VALUE = 100;
 export default function AnimatedProgressBar({
   value,
   label,
-  color = "#6366f1",
-  className = "",
-  barClassName = "",
-  labelClassName = "",
+  color = '#6366f1',
+  className = '',
+  barClassName = '',
+  labelClassName = '',
   showValue = false,
 }: AnimatedProgressBarProps) {
-  const clampedValue = Math.max(
-    MIN_PROGRESS_VALUE,
-    Math.min(MAX_PROGRESS_VALUE, value)
-  );
+  const clampedValue = Math.max(MIN_PROGRESS_VALUE, Math.min(MAX_PROGRESS_VALUE, value));
 
-  const displayLabel = label || (showValue ? `${clampedValue}%` : "");
+  const displayLabel = label || (showValue ? `${clampedValue}%` : '');
 
   return (
     <div className={`w-full ${className}`}>
@@ -40,7 +37,7 @@ export default function AnimatedProgressBar({
           initial={{ width: MIN_PROGRESS_VALUE }}
           style={{ backgroundColor: color }}
           transition={{
-            type: "spring",
+            type: 'spring',
             damping: 20,
             stiffness: 90,
             mass: 1,
@@ -49,10 +46,7 @@ export default function AnimatedProgressBar({
 
         {displayLabel && (
           <div
-            className={`absolute inset-0 flex items-center justify-center
-              text-[10px] whitespace-nowrap
-              text-foreground drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]
-              ${labelClassName}`}
+            className={`text-foreground absolute inset-0 flex items-center justify-center text-[10px] whitespace-nowrap drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] ${labelClassName}`}
           >
             {displayLabel}
           </div>

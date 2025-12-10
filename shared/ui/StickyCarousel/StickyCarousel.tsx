@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
-import { List } from "@/shared/ui/List/List";
-import TabCarousel from "@/shared/ui/TabCarousel/TabCarousel";
-import styles from "./StickyCarousel.module.scss";
-import { useTransactionHistory } from "@/featured/transaction-history/api/transaction-history.queries";
+import { useEffect, useRef, useState } from 'react';
+import { List } from '@/shared/ui/List/List';
+import TabCarousel from '@/shared/ui/TabCarousel/TabCarousel';
+import styles from './StickyCarousel.module.scss';
+import { useTransactionHistory } from '@/featured/transaction-history/api/transaction-history.queries';
 
 export const StickyCarousel = () => {
   const { data: dataTransaction } = useTransactionHistory();
@@ -26,21 +26,17 @@ export const StickyCarousel = () => {
   }, []);
 
   return (
-    <div className={styles["container"]}>
+    <div className={styles['container']}>
       <div ref={tabRef} />
 
-      <div
-        className={`${styles["wrapper-sticky"]} ${
-          isSticky && styles["active"]
-        }`}
-      >
+      <div className={`${styles['wrapper-sticky']} ${isSticky && styles['active']}`}>
         <TabCarousel
-          tabs={["Holders leaderboard", "Latest transfers", "TOP users"]}
-          onChange={(index) => console.log("Selected:", index)}
+          tabs={['Holders leaderboard', 'Latest transfers', 'TOP users']}
+          onChange={(index) => console.log('Selected:', index)}
         />
       </div>
 
-      <div className={styles["wrapper-list"]}>
+      <div className={styles['wrapper-list']}>
         <List data={dataTransaction} />
       </div>
     </div>

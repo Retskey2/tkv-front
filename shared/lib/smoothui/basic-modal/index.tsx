@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import { X } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
-import { useOnClickOutside } from "usehooks-ts";
+import { X } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { useOnClickOutside } from 'usehooks-ts';
 
 export type BasicModalProps = {
   isOpen: boolean;
   onClose: () => void;
   title?: string;
   children: React.ReactNode;
-  size?: "sm" | "md" | "lg" | "xl" | "full";
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
 };
 
 const modalSizes = {
-  sm: "max-w-sm",
-  md: "max-w-md",
-  lg: "max-w-lg",
-  xl: "max-w-xl",
-  full: "max-w-4xl",
+  sm: 'max-w-sm',
+  md: 'max-w-md',
+  lg: 'max-w-lg',
+  xl: 'max-w-xl',
+  full: 'max-w-4xl',
 };
 
 export default function BasicModal({
@@ -27,25 +27,23 @@ export default function BasicModal({
   onClose,
   title,
   children,
-  size = "md",
+  size = 'md',
 }: BasicModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
-  const modalRef = useRef<HTMLDivElement>(
-    null
-  ) as React.RefObject<HTMLDivElement>;
+  const modalRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>;
   useOnClickOutside(modalRef, () => onClose());
-  const [mounted] = useState(() => typeof window !== "undefined");
+  const [mounted] = useState(() => typeof window !== 'undefined');
 
   // Close on Escape key press
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isOpen) {
+      if (e.key === 'Escape' && isOpen) {
         onClose();
       }
     };
 
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose]);
 
   if (!mounted) return null;
@@ -60,7 +58,7 @@ export default function BasicModal({
           {/* Backdrop */}
           <motion.div
             animate={{ opacity: 1 }}
-            className="fixed inset-0 z-80 bg-background/70 backdrop-blur-sm"
+            className="bg-background/70 fixed inset-0 z-80 backdrop-blur-sm"
             exit={{ opacity: 0 }}
             initial={{ opacity: 0 }}
             onClick={(e) => {
@@ -81,7 +79,7 @@ export default function BasicModal({
           >
             <motion.div
               animate={{ scale: 1, y: 0, opacity: 1 }}
-              className={`${modalSizes[size]} relative mx-auto w-full rounded-xl border bg-tg-theme-color p-4 shadow-xl sm:p-6`}
+              className={`${modalSizes[size]} bg-tg-theme-color relative mx-auto w-full rounded-xl border p-4 shadow-xl sm:p-6`}
               exit={{
                 scale: 0.95,
                 y: 10,
@@ -90,17 +88,15 @@ export default function BasicModal({
               }}
               initial={{ scale: 0.9, y: 20, opacity: 0 }}
               ref={modalRef}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             >
               {/* Header */}
               <div className="mb-4 flex items-center justify-between">
                 {title && (
-                  <h3 className="font-medium text-foreground/75 text-xl leading-6">
-                    {title}
-                  </h3>
+                  <h3 className="text-foreground/75 text-xl leading-6 font-medium">{title}</h3>
                 )}
                 <motion.button
-                  className="ml-auto rounded-full p-1.5 transition-colors hover:bg-secondary"
+                  className="hover:bg-secondary ml-auto rounded-full p-1.5 transition-colors"
                   onClick={onClose}
                   transition={{ duration: 0.2 }}
                   whileHover={{ rotate: 90 }}

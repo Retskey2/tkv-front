@@ -1,7 +1,7 @@
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 
 const TelegramProviderNoSSR = dynamic(
-  () => import("./TelegramProvider").then((mod) => mod.TelegramProvider),
+  () => import('./TelegramProvider').then((mod) => mod.TelegramProvider),
   {
     ssr: false,
     loading: () => null,

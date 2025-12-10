@@ -1,13 +1,13 @@
 @reference "#tailwind.css";
 
 .container {
-  @apply border border-white/20 p-3 rounded-[14px] flex flex-col gap-[15px];
+  @apply flex flex-col gap-[15px] rounded-[14px] border border-white/20 p-3;
 
   .raise {
-    @apply flex flex-col gap-[15px] mt-3;
+    @apply mt-3 flex flex-col gap-[15px];
 
     h1 {
-      @apply text-[12px] flex gap-1;
+      @apply flex gap-1 text-[12px];
 
       span {
         @apply text-[14px];
@@ -19,21 +19,21 @@
     }
 
     span {
-      @apply text-[10px] text-foreground/75;
+      @apply text-foreground/75 text-[10px];
     }
   }
 
   .wrapper-fund {
-    @apply flex flex-col gap-[15px] bg-[#253341] rounded-[10px] p-3;
+    @apply flex flex-col gap-[15px] rounded-[10px] bg-[#253341] p-3;
 
     .fundation {
       @apply flex justify-between;
 
       .info {
-        @apply flex items-center flex-row gap-2.5;
+        @apply flex flex-row items-center gap-2.5;
 
         h2 {
-          @apply text-xs text-foreground/43;
+          @apply text-foreground/43 text-xs;
         }
 
         p {
@@ -42,13 +42,13 @@
       }
 
       .link-to {
-        @apply bg-white/10 hover:bg-white/15 py-2.5 px-[18px] rounded-[14px] hover:scale-98 transition-all font-bold;
+        @apply rounded-[14px] bg-white/10 px-[18px] py-2.5 font-bold transition-all hover:scale-98 hover:bg-white/15;
       }
     }
   }
 
   .stats {
-    @apply text-[10px] flex flex-row gap-1 pt-3 border-t border-t-white/10;
+    @apply flex flex-row gap-1 border-t border-t-white/10 pt-3 text-[10px];
 
     span {
       @apply text-[14px];

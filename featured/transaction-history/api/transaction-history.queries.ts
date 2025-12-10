@@ -1,14 +1,11 @@
-import { useQuery, UseQueryResult } from "@tanstack/react-query";
+import { useQuery, UseQueryResult } from '@tanstack/react-query';
 
-import { getTransactionHistory } from "./transaction-history.api";
-import { TransactionHistory } from "../types/types";
+import { getTransactionHistory } from './transaction-history.api';
+import { TransactionHistory } from '../types/types';
 
-export function useTransactionHistory(): UseQueryResult<
-  TransactionHistory[] | undefined,
-  Error
-> {
+export function useTransactionHistory(): UseQueryResult<TransactionHistory[] | undefined, Error> {
   return useQuery({
-    queryKey: ["transaction-history"],
+    queryKey: ['transaction-history'],
     queryFn: () => {
       return getTransactionHistory().then((res) => res.data);
     },

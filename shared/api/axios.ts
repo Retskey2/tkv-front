@@ -1,6 +1,6 @@
-import axiosInstance from "axios";
+import axiosInstance from 'axios';
 
-import config from "@/shared/config";
+import config from '@/shared/config';
 
 const axios = axiosInstance.create({
   baseURL: `${config.NEXT_PUBLIC_API_PATH}/api`,

@@ -6,11 +6,11 @@
   .info {
     @apply text-left;
     h1 {
-      @apply text-base text-left;
+      @apply text-left text-base;
     }
 
     p {
-      @apply text-[10px] text-subtext text-left;
+      @apply text-subtext text-left text-[10px];
     }
   }
 }

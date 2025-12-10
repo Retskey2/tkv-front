@@ -1,12 +1,8 @@
-"use client";
+'use client';
 
-import React, { useLayoutEffect, useRef } from "react";
-import {
-  init,
-  themeParams,
-  bindThemeParamsCssVars,
-} from "@telegram-apps/sdk-react";
-import { enableTelegramMock } from "@/shared/lib/hooks/mockTelegramEnv";
+import React, { useLayoutEffect, useRef } from 'react';
+import { init, themeParams, bindThemeParamsCssVars } from '@telegram-apps/sdk-react';
+import { enableTelegramMock } from '@/shared/lib/hooks/mockTelegramEnv';
 
 let cssVarsBound = false;
 
@@ -18,7 +14,7 @@ export function TelegramProvider({ children }: { children: React.ReactNode }) {
     hasRun.current = true;
 
     (async () => {
-      if (process.env.NODE_ENV === "development") await enableTelegramMock();
+      if (process.env.NODE_ENV === 'development') await enableTelegramMock();
 
       await init();
       themeParams.mountSync();
@@ -42,19 +38,14 @@ export function TelegramProvider({ children }: { children: React.ReactNode }) {
 
       const setChipColor = () => {
         const style = getComputedStyle(document.documentElement);
-        const btnRaw =
-          style.getPropertyValue("--tg-theme-button-color") || "#ffffff";
+        const btnRaw = style.getPropertyValue('--tg-theme-button-color') || '#ffffff';
         const btn = btnRaw.trim();
         const { r, g, b } = parseColor(btn);
         const brightness = (r * 299 + g * 587 + b * 114) / 1000 / 255;
-        const textRaw =
-          style.getPropertyValue("--tg-theme-text-color") || "#000000";
+        const textRaw = style.getPropertyValue('--tg-theme-text-color') || '#000000';
         const textColor = textRaw.trim();
-        const chipColor = brightness > 0.5 ? textColor : "#ffffff";
-        document.documentElement.style.setProperty(
-          "--finch-chip-text-color",
-          chipColor
-        );
+        const chipColor = brightness > 0.5 ? textColor : '#ffffff';
+        document.documentElement.style.setProperty('--finch-chip-text-color', chipColor);
       };
 
       setChipColor();
@@ -71,8 +62,8 @@ export function TelegramProvider({ children }: { children: React.ReactNode }) {
         themeParams.mountSync();
         setChipColor();
       };
-      tg?.onEvent("theme_changed", upd);
-      tg?.onEvent("themeChanged", upd);
+      tg?.onEvent('theme_changed', upd);
+      tg?.onEvent('themeChanged', upd);
     })();
   }, []);
 

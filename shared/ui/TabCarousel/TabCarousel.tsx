@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import styles from "./TabCarousel.module.scss";
-import { useRef, useState } from "react";
-import { Tab } from "./Tab/Tab";
+import styles from './TabCarousel.module.scss';
+import { useRef, useState } from 'react';
+import { Tab } from './Tab/Tab';
 
 type TabCarouselProps = {
   tabs: string[];
@@ -23,13 +23,13 @@ export default function TabCarousel({ tabs, onChange }: TabCarouselProps) {
     if (container && tab) {
       container.scrollTo({
         left: tab.offsetLeft - container.clientWidth / 2 + tab.clientWidth / 2,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
     }
   };
 
   return (
-    <div ref={ref} className={styles["container-tabs-carousel"]}>
+    <div ref={ref} className={styles['container-tabs-carousel']}>
       {tabs.map((item, i) => (
         <Tab key={i} onClick={() => handleSelect(i)} active={active === i}>
           {item}

@@ -1,4 +1,4 @@
-type Environment = "development" | "production";
+type Environment = 'development' | 'production';
 
 const config = {
   NODE_ENV: process.env.NODE_ENV as Environment,

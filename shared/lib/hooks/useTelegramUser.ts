@@ -1,15 +1,11 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useMemo } from "react";
-import {
-  retrieveLaunchParams,
-  ThemeParams,
-  type LaunchParams,
-} from "@telegram-apps/sdk";
-import { themeParamsState, useSignal } from "@telegram-apps/sdk-react";
+import { useState, useEffect, useMemo } from 'react';
+import { retrieveLaunchParams, ThemeParams, type LaunchParams } from '@telegram-apps/sdk';
+import { themeParamsState, useSignal } from '@telegram-apps/sdk-react';
 
-import { UserData } from "../types/user";
-import { toHex } from "../utils/converter";
+import { UserData } from '../types/user';
+import { toHex } from '../utils/converter';
 
 export function useTelegramUser(): {
   userData: UserData | null;
@@ -19,7 +15,7 @@ export function useTelegramUser(): {
   const palette = useSignal(themeParamsState);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === 'undefined') return;
 
     let mounted = true;
 
@@ -28,7 +24,7 @@ export function useTelegramUser(): {
         const params = retrieveLaunchParams();
         if (mounted) setLaunch(params ?? null);
       } catch (e: unknown) {
-        console.error("Telegram launch params error:", e);
+        console.error('Telegram launch params error:', e);
         if (mounted) setLaunch(null);
       }
     };

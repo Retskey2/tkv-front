@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useFundStats } from "@/featured/fund/api/fund.queries";
-import { FundStatistic } from "@/shared/ui/FundStatistic/FundStatistic";
+import { useFundStats } from '@/featured/fund/api/fund.queries';
+import { FundStatistic } from '@/shared/ui/FundStatistic/FundStatistic';
 
 export const FundStatisticContainer = () => {
   const { data, isLoading } = useFundStats();

@@ -1,5 +1,5 @@
 @reference "#tailwind.css";
 
 .container-tabs-carousel {
-  @apply flex gap-3 min-h-[30px] overflow-x-hidden scroll-smooth touch-pan-x select-none;
+  @apply flex min-h-[30px] touch-pan-x gap-3 overflow-x-hidden scroll-smooth select-none;
 }

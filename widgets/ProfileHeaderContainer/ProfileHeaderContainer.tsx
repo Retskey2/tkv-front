@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { ProfileHeader } from "@/shared/ui/ProfileHeader/ProfileHeader";
+import { ProfileHeader } from '@/shared/ui/ProfileHeader/ProfileHeader';
 
-import { useTelegramUser } from "@/shared/lib/hooks/useTelegramUser";
-import { useUser } from "@/featured/user/api/user.queries";
+import { useTelegramUser } from '@/shared/lib/hooks/useTelegramUser';
+import { useUser } from '@/featured/user/api/user.queries';
 
 export const ProfileHeaderContainer = () => {
   const { userData } = useTelegramUser();

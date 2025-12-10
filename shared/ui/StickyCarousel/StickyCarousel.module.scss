@@ -4,7 +4,7 @@
   @apply flex flex-col gap-2.5;
 
   .wrapper-sticky {
-    @apply sticky top-0 z-50  transition-all pb-2 pt-4 bg-transparent;
+    @apply sticky top-0 z-50 bg-transparent pt-4 pb-2 transition-all;
   }
 
   .active {
@@ -13,6 +13,6 @@
   }
 
   .wrapper-list {
-    @apply pb-20 no-scrollbar overflow-y-auto;
+    @apply no-scrollbar overflow-y-auto pb-20;
   }
 }
