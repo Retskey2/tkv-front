@@ -31,10 +31,10 @@ export async function enableTelegramMock(): Promise<void> {
     [
       "user",
       JSON.stringify({
-        id: 279058397,
-        first_name: "Vladislav",
-        last_name: "Kibenko",
-        username: "vdkfrost",
+        id: 123456,
+        first_name: "John",
+        last_name: "Doe",
+        username: "johndoe",
         language_code: "ru",
         is_premium: true,
         allows_write_to_pm: true,

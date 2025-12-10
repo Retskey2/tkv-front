@@ -40,7 +40,6 @@ export function useTelegramUser(): {
     };
   }, []);
 
-  // Вычисляем тему на основе сигнала и мемоизируем результат
   const theme = useMemo<ThemeParams | null>(() => {
     if (!palette) return null;
     return {
