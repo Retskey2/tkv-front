@@ -10,3 +10,7 @@ export interface IFormValues {
   currency: string;
   amount: number;
 }
+
+export interface ICurrencyForm {
+  maxPoints: number;
+}

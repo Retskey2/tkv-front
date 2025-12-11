@@ -1,4 +1,3 @@
-// hooks/useSticky.ts
 import { useEffect, useState, useRef, RefObject } from 'react';
 
 export const useSticky = (

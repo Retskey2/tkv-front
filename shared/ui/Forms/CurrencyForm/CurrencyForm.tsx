@@ -4,20 +4,21 @@ import { useForm, SubmitHandler, useWatch } from 'react-hook-form';
 import { DropdownInput } from '../../DropdownInput/DropdownInput';
 import { CURR_WALLET } from '@/shared/constants/constansts.controller';
 import { Button } from '../../Button';
-import { IFormValues } from './types';
+import { ICurrencyForm, IFormValues } from './types';
 
 import styles from './CurrencyForm.module.scss';
 import { AmountInput } from '../../AmountInput/AmountInput';
 
-export default function CurrencyForm() {
+export default function CurrencyForm({ maxPoints }: ICurrencyForm) {
   const { handleSubmit, control } = useForm<IFormValues>({
-    defaultValues: { currency: CURR_WALLET[0].id, amount: 100 },
+    defaultValues: { currency: CURR_WALLET[0].id, amount: maxPoints },
+    mode: 'onChange',
   });
 
   const amount = useWatch({
     control,
     name: 'amount',
-    defaultValue: 100,
+    defaultValue: maxPoints,
   });
 
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
@@ -32,11 +33,11 @@ export default function CurrencyForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles['container-form']}>
       <div className={styles['container-inputs']}>
-        <AmountInput control={control} name="amount" />
+        <AmountInput control={control} max={maxPoints} name="amount" />
         <DropdownInput control={control} name="currency" />
       </div>
       <Button disabled={isDisabled} type="submit" className={styles['submit-button']}>
-        {amount < 100 ? 'Minimum 100 points required' : `Buy ${amount} Points`}
+        {amount < 100 ? 'Minimum 100 points required' : `Buy`}
       </Button>
     </form>
   );

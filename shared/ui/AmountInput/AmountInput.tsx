@@ -19,6 +19,7 @@ export const AmountInput = <T extends FieldValues>({
       name={name}
       render={({ field }) => {
         const numericValue = Number((field.value || 0).toString().replace(',', '.'));
+        const isMaxValue = numericValue >= max;
 
         const increment = () => field.onChange((numericValue + 1).toFixed(2));
         const decrement = () => field.onChange(Math.max(0, numericValue - 1).toFixed(2));
@@ -44,7 +45,7 @@ export const AmountInput = <T extends FieldValues>({
                 placeholder="0,00"
               />
 
-              <button type="button" onClick={increment}>
+              <button disabled={isMaxValue} type="button" onClick={increment}>
                 <IconIncrease />
               </button>
             </div>
