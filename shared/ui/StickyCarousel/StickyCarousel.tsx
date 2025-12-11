@@ -1,29 +1,20 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { List } from '@/shared/ui/List/List';
+import { useState } from 'react';
+
 import TabCarousel from '@/shared/ui/TabCarousel/TabCarousel';
 import styles from './StickyCarousel.module.scss';
-import { useTransactionHistory } from '@/featured/transaction-history/api/transaction-history.queries';
+import { useSticky } from './useSticky';
 
 export const StickyCarousel = () => {
-  const { data: dataTransaction } = useTransactionHistory();
+  const [tabRef, isSticky] = useSticky();
+  const [selectedTab, setSelectedTab] = useState(0);
 
-  const tabRef = useRef<HTMLDivElement>(null);
-  const [isSticky, setIsSticky] = useState(false);
+  const handleTabChange = (index: number) => {
+    setSelectedTab(index);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsSticky(!entry.isIntersecting);
-      },
-      { threshold: 1 }
-    );
-
-    if (tabRef.current) observer.observe(tabRef.current);
-
-    return () => observer.disconnect();
-  }, []);
+    console.log('Selected:', selectedTab);
+  };
 
   return (
     <div className={styles['container']}>
@@ -32,12 +23,8 @@ export const StickyCarousel = () => {
       <div className={`${styles['wrapper-sticky']} ${isSticky && styles['active']}`}>
         <TabCarousel
           tabs={['Holders leaderboard', 'Latest transfers', 'TOP users']}
-          onChange={(index) => console.log('Selected:', index)}
+          onChange={handleTabChange}
         />
-      </div>
-
-      <div className={styles['wrapper-list']}>
-        <List data={dataTransaction} />
       </div>
     </div>
   );

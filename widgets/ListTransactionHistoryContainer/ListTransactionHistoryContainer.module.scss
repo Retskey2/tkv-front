@@ -1,0 +1,5 @@
+@reference "#tailwind.css";
+
+.wrapper-list {
+  @apply no-scrollbar max-h-[calc(94px*6)] overflow-y-auto pb-20;
+}

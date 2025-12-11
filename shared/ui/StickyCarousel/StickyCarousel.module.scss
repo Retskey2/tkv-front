@@ -11,8 +11,4 @@
     @apply bg-tg-theme-color/20;
     backdrop-filter: blur(10px);
   }
-
-  .wrapper-list {
-    @apply no-scrollbar max-h-[calc(94px*6)] overflow-y-auto pb-20;
-  }
 }
