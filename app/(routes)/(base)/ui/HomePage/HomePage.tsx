@@ -1,5 +1,5 @@
 import { FundStatisticContainer } from '@/widgets/FundStatisticContainer/FundStatisticContainer';
-import { StickyCarousel } from '../../../../../shared/ui/StickyCarousel/StickyCarousel';
+import { StickyCarousel } from '@/shared/ui/StickyCarousel/StickyCarousel';
 
 import styles from './HomePage.module.scss';
 import { Description } from '@/shared/ui/Description/Description';

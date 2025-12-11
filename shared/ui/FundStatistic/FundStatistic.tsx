@@ -41,7 +41,7 @@ export const FundStatistic = ({ data }: IFundStatistic) => {
         <h2 className={styles['stats']}>
           <span>🔥</span>
           <p>
-            {data?.membersCount} members & {data?.purchasedCount} purchased
+            {data?.membersCount ?? 0} members & {data?.purchasedCount ?? 0} purchased
           </p>
         </h2>
       </div>

@@ -5,9 +5,9 @@ import { List } from '@/shared/ui';
 
 import styles from './ListTransactionHistoryContainer.module.scss';
 export const ListTransactionHistoryContainer = () => {
-  const { data, isLoading } = useTransactionHistory();
+  const { data } = useTransactionHistory();
 
-  if (isLoading) return <p>Loading...</p>;
+  // if (isLoading) return <p>Loading...</p>;
   // if (error || !data) return <p>Error loading fund statistics</p>;
 
   return (
