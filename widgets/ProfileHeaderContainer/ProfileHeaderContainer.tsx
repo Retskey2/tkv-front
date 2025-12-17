@@ -11,5 +11,10 @@ export const ProfileHeaderContainer = () => {
 
   // if (isLoading) return <p>Loading...</p>;
 
-  return <ProfileHeader userData={user} />;
+  return (
+    <>
+      <div>{userData?.first_name}</div>
+      <ProfileHeader userData={user} />;
+    </>
+  );
 };
